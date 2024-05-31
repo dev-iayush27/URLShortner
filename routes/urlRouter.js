@@ -7,7 +7,7 @@ const {
 
 const router = express.Router();
 
-router.post("/url", generateNewShortURL);
+router.post("/", generateNewShortURL);
 router.get("/:shortId", getShortURL);
 router.get("/analytics/:shortId", getAnalytics);
 
