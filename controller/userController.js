@@ -31,10 +31,12 @@ async function handleUserLogin(req, res) {
     return res.status(404).json({ msg: "Invalid username/password." });
   }
   const token = setUser(user);
-  return res
-    .status(200)
-    .cookie("token", token)
-    .json({ status: "Success", token: token });
+  return (
+    res
+      .status(200)
+      // .cookie("token", token)
+      .json({ status: "Success", token: token })
+  );
 }
 
 module.exports = { handleUserSignup, handleUserLogin };
